@@ -1,0 +1,26 @@
+{
+  "name": "webrtc-video-calling-server",
+  "version": "1.0.0",
+  "description": "A simple WebRTC video calling server using Node.js and Socket.IO",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "start": "nodemon .",
+    "dev": "concurrently --kill-others \"yarn watch\" \"yarn start\"",
+    "prestart": "yarn build",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.2",
+    "nodemon": "^3.1.14",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
