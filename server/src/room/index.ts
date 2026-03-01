@@ -11,8 +11,8 @@ export const roomHandler = (socket: Socket) => {
     };
 
     const joinRoom = ({ roomId }: { roomId: string }) => {
-        console.log("A user joined the room", roomId);
         socket.join(roomId);
+        console.log("A user joined the room", roomId);
     };
 
     socket.on("create-room", createRoom);

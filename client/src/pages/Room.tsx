@@ -7,7 +7,7 @@ export const Room = () => {
     const { ws } = useContext(RoomContext);
 
     useEffect(() => {
-        ws.on("join-room", { roomId: id });
+        ws.emit("join-room", { roomId: id });
     }, [id])
 
     return <>Room Id: {id}</>
